@@ -91,8 +91,9 @@ body { background-color: var(--white); color: var(--purple-navy); font-size: 1.6
 :is(.service-card, .features-card) .title { color: var(--st-patricks-blue); font-size: var(--fs-4); font-weight: var(--fw-700); }
 :is(.service-card, .features-card) .text { font-size: var(--fs-8); }
 
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 1; transform: translateY(0); transition: all 0.8s ease-out; }
+/* This ensures the animation only happens if JS is working */
+.js-enabled .reveal:not(.active) { opacity: 0; transform: translateY(30px); }
 
 /* #HEADER */
 .header .btn { display: none; }
